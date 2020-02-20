@@ -88,7 +88,7 @@ function divideByThree(str1){
 };
 console.log(divideByThree("Commander"));
 //#10
-function getPermutations(str) {
+function generateCombinations(str) {
       let results = [];
 
       if (str.length === 1)
@@ -103,7 +103,7 @@ throw new Error('This string is to long');
       {
         let firstChar = str[i];
         let otherChar = str.substring(0, i) + str.substring(i + 1);
-        let otherPermutations = getPermutations(otherChar);
+        let otherPermutations = generateCombinations(otherChar);
         
         for (let j = 0; j < otherPermutations.length; j++) {
           results.push(firstChar + otherPermutations[j]);
@@ -111,4 +111,4 @@ throw new Error('This string is to long');
       }
       return results;   
     }
-    console.log(getPermutations("man"));
+    console.log(generateCombinations("man"));
